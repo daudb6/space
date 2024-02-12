@@ -1,0 +1,25 @@
+.navbar {
+  background-color: aqua;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+.navbar-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+nav a {
+  font-size: 1.2rem;
+}
+nav :nth-child(3) {
+  font-size: 2rem;
+}

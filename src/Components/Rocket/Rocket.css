@@ -1,0 +1,33 @@
+.rocket {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 4rem;
+}
+.details {
+  width: 80%;
+}
+
+.rocket-img img {
+  max-width: 300px;
+  width: 100%;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.heading h3 {
+  font-size: 3rem;
+}
+.heading p {
+  font-size: 1.1rem;
+}
+.btn button {
+  padding: 0.7rem 2.2rem;
+  border-radius: 7px;
+  background-color: #2673f7;
+  color: aliceblue;
+  font-size: 1.2rem;
+  border: none;
+  margin-top: 2.5rem;
+}
