@@ -7,9 +7,11 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Routes>
+      <Routes>
         <Route path="Rocket" element={<Rocket />} />
-      </Routes> */}
+        <Route path="Mission" element={<Mission />} />
+        {/* <Route path="Profile" element={<MyProfile />} /> */}
+      </Routes>
     </>
   );
 }

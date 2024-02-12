@@ -19,7 +19,8 @@ nav {
 }
 nav a {
   font-size: 1.2rem;
+  text-decoration: none;
 }
-nav :nth-child(3) {
+span {
   font-size: 2rem;
 }
