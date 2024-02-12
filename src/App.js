@@ -1,13 +1,15 @@
-
-import './App.css';
-import { Navbar } from './Components/Navbar/Navbar';
-import { Rocket } from './Components/Rocket/Rocket';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./Components/Navbar/Navbar";
+import { Rocket } from "./Components/Rocket/Rocket";
 
 function App() {
   return (
     <>
-    <Navbar />
-    <Rocket />
+      <Navbar />
+      {/* <Routes>
+        <Route path="Rocket" element={<Rocket />} />
+      </Routes> */}
     </>
   );
 }
