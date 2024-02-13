@@ -3,11 +3,11 @@
 }
 .mission-table {
   border-collapse: collapse;
-   width: 100%; 
-  
+  width: 100%;
 }
 
-.mission-table th, td {
+.mission-table th,
+.mission-table td {
   border: 1px solid black;
   padding: 8px;
   text-align: left;
