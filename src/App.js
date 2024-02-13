@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="Rocket" element={<Rocket />} />
+        <Route path="/" element={<Rocket />} />
         <Route path="Mission" element={<Mission />} />
         <Route path="profile" element={<Profile />} />
         <Route path="*" element={<h3>Invalid Path</h3>} />

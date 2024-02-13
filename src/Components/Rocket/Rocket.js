@@ -1,21 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Rocket.css"
 
 export const Rocket = () => {
+const [data,setData] = useState(null)
+const fetchData = async () => {
+  const response = await fetch("https://api.spacexdata.com/v4/rockets")
+   setData (await response.json())
+  console.log(data)
+
+
+}
+fetchData();
+
   return (
-    <div className='rocket'>
+    <>
+   {!data?  <p>loading....</p> : (
+    <>
+    {data.map((e) => {
+      return(
+        
+        <div className='rocket'>
       <div className='rocket-img'>
-      <img src='rocket.jpg'></img>
+      <img src={e.flickr_images[1]}></img>
       </div>
       <div className='details'>
         <div className='heading'>
-          <h3>Falcon 1</h3>
-          <p>The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.</p>
+          <h3>{e.name}</h3>
+          <p>{e.description}</p>
         </div>
         <div className='btn'>
           <button type='button'>Reserve Rocket</button>
         </div>
       </div>
     </div>
+
+      )
+    })}
+    
+    </>
+
+   )}
+    
+
+</>  
   )
+
 }
+
+

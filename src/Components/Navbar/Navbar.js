@@ -12,7 +12,7 @@ export const Navbar = () => {
       {/* As anchor tag refreshes whole page from server so don't use anchor tag
       in react instead we use Navlink or Link */}
       <nav>
-        <NavLink to="Rocket">Rockets</NavLink>
+        <NavLink to="/">Rockets</NavLink>
         <NavLink to="Mission">Mission </NavLink>
         <span> |</span>
         <NavLink to="profile">My Profile</NavLink>
