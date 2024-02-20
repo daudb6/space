@@ -4,10 +4,11 @@ import { Navbar } from "./Components/Navbar/Navbar";
 import { Rocket } from "./Components/Rocket/Rocket";
 import { Mission } from "./Components/Mission/Mission";
 import Profile from "./Components/Myprofile/Profile";
+import store from "./store";
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Rocket />} />
@@ -15,7 +16,7 @@ function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="*" element={<h3>Invalid Path</h3>} />
       </Routes>
-    </>
+    </Provider>
   );
 }
 
