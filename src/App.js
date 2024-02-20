@@ -5,6 +5,7 @@ import { Rocket } from "./Components/Rocket/Rocket";
 import { Mission } from "./Components/Mission/Mission";
 import Profile from "./Components/Myprofile/Profile";
 import store from "./store";
+import { Provider } from "react-redux";
 
 function App() {
   return (

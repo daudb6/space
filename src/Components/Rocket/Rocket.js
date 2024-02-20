@@ -1,50 +1,48 @@
-import React, { useState } from 'react'
-import "./Rocket.css"
+import React, { useEffect } from "react";
+import "./Rocket.css";
+import { rocketFetch } from "../../features/rocketSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export const Rocket = () => {
-const [data,setData] = useState(null)
-const fetchData = async () => {
-  const response = await fetch("https://api.spacexdata.com/v4/rockets")
-   setData (await response.json())
-  console.log(data)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(rocketFetch());
+  }, []);
 
-
-}
-fetchData();
+  const rocketData = useSelector((state) => state.rocketReducer.rocket);
+  console.log(rocketData);
+  const isLoading = useSelector((state) => state.rocketReducer.isLoading);
 
   return (
     <>
-   {!data?  <p>loading....</p> : (
-    <>
-    {data.map((e) => {
-      return(
-        
-        <div className='rocket'>
-      <div className='rocket-img'>
-      <img src={e.flickr_images[1]}></img>
-      </div>
-      <div className='details'>
-        <div className='heading'>
-          <h3>{e.name}</h3>
-          <p>{e.description}</p>
-        </div>
-        <div className='btn'>
-          <button type='button'>Reserve Rocket</button>
-        </div>
-      </div>
-    </div>
-
-      )
-    })}
-    
+      {isLoading ? (
+        <h1>Loading......</h1>
+      ) : (
+        <>
+          {!rocketData ? (
+            <p>Loading....</p>
+          ) : (
+            <>
+              {rocketData.map((rocket) => (
+                <div className="rocket" key={rocket.id}>
+                  <div className="rocket-img">
+                    <img src={rocket.flickr_images[1]} alt={rocket.name} />
+                  </div>
+                  <div className="details">
+                    <div className="heading">
+                      <h3>{rocket.name}</h3>
+                      <p>{rocket.description}</p>
+                    </div>
+                    <div className="btn">
+                      <button type="button">Reserve Rocket</button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
+        </>
+      )}
     </>
-
-   )}
-    
-
-</>  
-  )
-
-}
-
-
+  );
+};
