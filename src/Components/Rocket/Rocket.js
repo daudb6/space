@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Rocket.css";
 import { rocketFetch } from "../../features/rocketSlice";
+import { reservRocket,cancelReserve } from "../../features/rocketSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export const Rocket = () => {
