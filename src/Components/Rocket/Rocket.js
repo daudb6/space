@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 export const Rocket = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(rocketFetch());
+    if (rocketData.length === 0) dispatch(rocketFetch());
   }, []);
 
   const rocketData = useSelector((state) => state.rocketReducer.rocket);
@@ -32,10 +32,13 @@ export const Rocket = () => {
                   <div className="details">
                     <div className="heading">
                       <h3>{rocket.name}</h3>
+                      {rocket.status && (
+                        <span className="reserved">Reserved</span>
+                      )}
                       <p>{rocket.description}</p>
                     </div>
                     <div className="btn">
-                      {rocket.active ? (
+                      {rocket.status ? (
                         <button onClick={() => dispatch(cancelReserve(i))}>
                           Cancel Reservation
                         </button>
