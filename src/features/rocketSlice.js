@@ -12,13 +12,13 @@ const rocketSlice = createSlice({
     isLoading: false,
   },
   reducers: {
-    reservRocket:(state,action) => {
-      state.mission[action.payload].status = true
-
+    reservRocket: (state, action) => {
+      state.rocket[action.payload].active = true;
+      alert(1122);
     },
-    cancelReserve: (state,action) => {
-      state.mission[action.payload].status = false
-    }
+    cancelReserve: (state, action) => {
+      state.rocket[action.payload].active = false;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(rocketFetch.pending, (state, action) => {
@@ -27,12 +27,9 @@ const rocketSlice = createSlice({
     builder.addCase(rocketFetch.fulfilled, (state, action) => {
       state.isLoading = false;
       state.rocket = [...action.payload];
-      console.log(action.payload)
+      console.log(action.payload);
     });
   },
 });
-export const{reservRocket,cancelReserve} = rocketSlice.actions
+export const { reservRocket, cancelReserve } = rocketSlice.actions;
 export default rocketSlice.reducer;
-
-
-
