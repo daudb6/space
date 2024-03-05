@@ -5,11 +5,6 @@ import { useSelector } from "react-redux";
 const Profile = () => {
   const mData = useSelector((state) => state.missionReducer.mission);
   const rData = useSelector((state) => state.rocketReducer.rocket);
-  // let d = localStorage(() => {
-  //   useEffect(()=> {
-  //     {}
-  //   },[])
-
   return (
     <>
       <div className="profile-section">
