@@ -9,9 +9,10 @@ export const Mission = () => {
   const dispatch = useDispatch()
   const missionData = useSelector((state) =>state.missionReducer.mission )
   useEffect(() => {
-    if(missionData.length === 0 )
-    dispatch(fetchMission())
-  },[dispatch]);
+    if (missionData.length === 0)
+        dispatch(fetchMission());
+}, [dispatch, missionData.length]);
+
 
   
 

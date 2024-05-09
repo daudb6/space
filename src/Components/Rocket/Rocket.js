@@ -8,7 +8,7 @@ export const Rocket = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(rocketFetch());
-  }, []);
+  }, [dispatch]);
 
   const rocketData = useSelector((state) => state.rocketReducer.rocket);
   console.log(rocketData);
