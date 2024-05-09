@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { fetchMission } from "../../features/missionSlice";
 import "./Mission.css";
 import { joinMission ,cancelMission} from "../../features/missionSlice";
@@ -11,7 +11,7 @@ export const Mission = () => {
   useEffect(() => {
     if(missionData.length === 0 )
     dispatch(fetchMission())
-  },[]);
+  },[dispatch]);
 
   
 

@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import "./Rocket.css";
 import { rocketFetch } from "../../features/rocketSlice";
-import { reservRocket,cancelReserve } from "../../features/rocketSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export const Rocket = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(rocketFetch());
-  }, []);
+  }, [dispatch]);
 
   const rocketData = useSelector((state) => state.rocketReducer.rocket);
   console.log(rocketData);
