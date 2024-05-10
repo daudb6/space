@@ -1,0 +1,25 @@
+.profile-section {
+  display: flex;
+  gap: 8rem;
+  padding: 2rem 4rem;
+}
+.local-table {
+  width: 100%;
+}
+.local-table td {
+  border: 1px solid;
+  padding: 25px;
+}
+.local-table tr {
+  display: flex;
+  flex-direction: column;
+}
+.m-t {
+  flex: 1;
+}
+.local-table {
+  margin-top: 1.3rem;
+}
+.r-t {
+  flex: 1;
+}
