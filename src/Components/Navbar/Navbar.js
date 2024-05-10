@@ -9,13 +9,11 @@ export const Navbar = () => {
         <img src="space-logo.png" alt="logo"></img>
         <h1>Space Travelers Hub</h1>
       </div>
-      {/* As anchor tag refreshes whole page from server so don't use anchor tag
-      in react instead we use Navlink or Link */}
       <nav>
         <NavLink to="/">Rockets</NavLink>
-        <NavLink to="Mission">Mission </NavLink>
+        <NavLink to="/Mission">Mission </NavLink>
         <span> |</span>
-        <NavLink to="profile">My Profile</NavLink>
+        <NavLink to="/profile">My Profile</NavLink>
       </nav>
     </div>
   );
